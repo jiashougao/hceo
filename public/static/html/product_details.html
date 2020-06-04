@@ -1,0 +1,324 @@
+<!doctype html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta http-equiv="Content-Language" content="zh-CN">
+	<title>暂无标题</title>
+	<meta name="keywords" content="">
+	<meta name="description" content="">
+	<meta name="copyright" content="" />
+	<meta name="viewport" content="user-scalable=no,width=device-width, initial-scale=1.0">
+	<!--[if IE]>
+	<script src="js/html5.js"></script>
+	<![endif]-->
+	<script src="js/jquery-1.9.1.min.js"></script>
+	<script src="js/swiper.min.js"></script>
+	<script src="js/wow.js"></script>
+	<script src="js/common.js"></script>
+
+	<link media="screen and (min-width:751px)" href="css/animate.min.css" rel="stylesheet" type="text/css" />
+	<link href="css/swiper.min.css" rel="stylesheet" type="text/css" />
+	<link href="css/common.css" rel="stylesheet" type="text/css" />
+	<link media="screen and (min-width:751px)" rel="stylesheet" href="css/style.css">
+	<link media="screen and (max-width:751px)" rel="stylesheet" href="css/style-phone.css">
+
+	<script type="text/javascript">
+	  $(document).ready(function(){
+		  heaSearch();//头部搜索
+		  navMenu();//导航
+		  seaDown();//展位号排序下拉
+	  });
+	</script>
+
+</head>
+
+<body class="wow fadeIn animated">
+	<!-- 头部 -->
+	<header class="header">
+		<div class="main">
+			<!-- logo -->
+			<div class="logo wow fadeInUp animated">
+				<a href=""><img src="images/index/logo.png" alt=""></a>
+			</div>
+			<!-- PC右侧 -->
+			<div class="hea_right wow fadeInUp animated">
+				<div class="hea_search">
+					<input type="text" class="hea_txt" placeholder="请输入搜索内容" />
+					<input type="submit" class="hea_sub"  />
+				</div>
+				<menu>
+					<a href="">注册</a>
+					<a href="">登录</a>
+				</menu>
+				<!-- 英文切换 国旗 -->
+				<a href="" class="hea_flag"></a>
+			</div>
+			<!-- 移动端菜单按钮 -->
+			<div class="hea_menuclick">
+				<div class="menu_con">
+				  <div class="menu_bor menu_bortop">
+				  </div>
+				  <div class="menu_bor menu_borcen">
+				  </div>
+				  <div class="menu_bor menu_borbot">
+				  </div>				  
+				</div>				
+			</div>
+			<!-- 菜单 -->
+			<div class="hea_menuhide wow animated fadeInUp" data-wow-delay="0.2s">
+				<ul class="hea_menu">
+					<li>
+						<a href="">首页</a>
+					</li>
+					<li>
+						<a href="">关于上交会</a>
+					</li>
+					<li>
+						<a href="">上交会发布</a>
+					</li>
+					<li>
+						<a href="">展会服务</a>
+					</li>												
+				</ul>
+				<div class="hea_menubg"></div>
+			</div>
+			<div class="clear"></div>
+		</div>
+	</header>
+	<div class="h12"></div>
+	<!-- 主体内容 -->
+	<div class="prodea_main">
+		<div class="pro_main">
+			<!-- 左侧 -->
+			<div class="pro_left">
+				<div class="prodea_img">
+					<ul class="swiper-wrapper">
+						<li class="swiper-slide">
+							<a href="">
+								<img src="images/page/poimg.jpg"/>
+							</a>
+						</li>
+						<li class="swiper-slide">
+							<a href="">
+								<img src="images/page/poimg.jpg"/>
+							</a>
+						</li>
+						<li class="swiper-slide">
+							<a href="">
+								<img src="images/page/poimg.jpg"/>
+							</a>
+						</li>						
+					</ul>
+					<p class="prodea_tab prodea_prev"></p>
+					<p class="prodea_tab prodea_next"></p>
+				</div>			
+				<p class="protit">展品名称</p>
+				<div class="prodea_more"><a>产品简介</a></div>
+				<div class="prodea_edit">
+					这里是文字内容这里是文字内容这里是文字内容这里是文字内容这里是文字内容这里是文字内容这里是文字内容
+					这里是文字内容这里是文字内容这里是文字内容这里是文字内容这里是文字内容这里是文字内容这里是文字内容
+					这里是文字内容这里是文字内容这里是文字内容这里是文字内容这里是文字内容这里是文字内容这里是文字内容
+					这里是文字内容这里是文字内容这里是文字内容这里是文字内容这里是文字内容这里是文字内容这里是文字内容
+				</div>			
+			</div> 
+			<!-- 右侧 -->
+			<div class="pro_right">
+				<p class="page_rtop">企业 / 机构信息</p>
+				<div class="prodea_rinfo">
+					<ul class="swiper-wrapper">
+						<li class="swiper-slide">
+							<a href="">
+								<div class="img"><img src="images/index/vimg.jpg"/></div>
+								<p class="textover p1">企业 / 机构名称</p>
+								<p class="textover p2">展区：#####</p>
+								<p class="textover p3">展位：###-###</p>
+							</a>
+						</li>
+						<li class="swiper-slide">
+							<a href="">
+								<div class="img"><img src="images/index/vimg.jpg"/></div>
+								<p class="textover p1">22企业 / 机构名称</p>
+								<p class="textover p2">展区：#####</p>
+								<p class="textover p3">展位：###-###</p>
+							</a>
+						</li>
+						<li class="swiper-slide">
+							<a href="">
+								<div class="img"><img src="images/index/vimg.jpg"/></div>
+								<p class="textover p1">33企业 / 机构名称</p>
+								<p class="textover p2">展区：#####</p>
+								<p class="textover p3">展位：###-###</p>
+							</a>
+						</li>						
+					</ul>
+					<!--切换按钮-->
+					<div class="prodea_infotabcon">
+						<p class="proinfo_prev">上一个展品</p>
+						<p class="proinfo_next">下一个展品</p>						
+					</div>
+				</div>
+				<p class="page_rtop">推荐商品</p>
+				<ul class="rec_ul">
+					<li>
+						<a href="">
+							<div class="rec_img">
+								<img src="images/index/vimg.jpg"/>
+							</div>
+							<div class="rec_rcon">
+								<p class="textover p1">展商名称</p>
+								<p class="textover p2">展厅类 - 节能环保</p>
+							</div>
+						</a>
+					</li>
+					<li>
+						<a href="">
+							<div class="rec_img">
+								<img src="images/index/vimg.jpg"/>
+							</div>
+							<div class="rec_rcon">
+								<p class="textover p1">展商名称</p>
+								<p class="textover p2">展厅类 - 节能环保</p>
+							</div>
+						</a>
+					</li>
+					<li>
+						<a href="">
+							<div class="rec_img">
+								<img src="images/index/vimg.jpg"/>
+							</div>
+							<div class="rec_rcon">
+								<p class="textover p1">展商名称</p>
+								<p class="textover p2">展厅类 - 节能环保</p>
+							</div>
+						</a>
+					</li>
+					<li>
+						<a href="">
+							<div class="rec_img">
+								<img src="images/index/vimg.jpg"/>
+							</div>
+							<div class="rec_rcon">
+								<p class="textover p1">展商名称</p>
+								<p class="textover p2">展厅类 - 节能环保</p>
+							</div>
+						</a>
+					</li>
+					<li>
+						<a href="">
+							<div class="rec_img">
+								<img src="images/index/vimg.jpg"/>
+							</div>
+							<div class="rec_rcon">
+								<p class="textover p1">展商名称</p>
+								<p class="textover p2">展厅类 - 节能环保</p>
+							</div>
+						</a>
+					</li>
+					<li>
+						<a href="">
+							<div class="rec_img">
+								<img src="images/index/vimg.jpg"/>
+							</div>
+							<div class="rec_rcon">
+								<p class="textover p1">展商名称</p>
+								<p class="textover p2">展厅类 - 节能环保</p>
+							</div>
+						</a>
+					</li>
+					<li>
+						<a href="">
+							<div class="rec_img">
+								<img src="images/index/vimg.jpg"/>
+							</div>
+							<div class="rec_rcon">
+								<p class="textover p1">展商名称</p>
+								<p class="textover p2">展厅类 - 节能环保</p>
+							</div>
+						</a>
+					</li>				
+					<li>
+						<a href="">
+							<div class="rec_img">
+								<img src="images/index/vimg.jpg"/>
+							</div>
+							<div class="rec_rcon">
+								<p class="textover p1">展商名称</p>
+								<p class="textover p2">展厅类 - 节能环保</p>
+							</div>
+						</a>
+					</li>				
+				</ul>
+			</div>
+			<div class="clear"></div>
+		</div>							
+	</div>
+	<div class="h140"></div>
+	<!--底部-->
+	<footer class="page_footer">
+		<div class="foo_top">
+			<div class="main">
+				<div class="foo_left">
+					<p class="toptit">组织机构</p>
+					<div class="foo_lcon">
+						<ul>
+							<li>主办单位</li>
+							<li>- 中华人民共和国商务部</li>
+							<li>- 中华人民共和国科学技术部</li>
+							<li>- 中华人民共和国国家知识产权局</li>
+							<li>- 上海市人民政府</li>
+						</ul>
+						<ul>
+							<li>支持单位</li>
+							<li>- 中华人民共和国商务部</li>
+							<li>- 中华人民共和国科学技术部</li>
+							<li>- 中华人民共和国国家知识产权局</li>
+							<li>- 上海市人民政府</li>
+						</ul>
+						<ul>
+							<li>主办单位</li>
+							<li>- 中华人民共和国商务部</li>
+							<li>- 中华人民共和国科学技术部</li>
+							<li>- 中华人民共和国国家知识产权局</li>
+							<li>- 上海市人民政府</li>
+						</ul>
+						<div class="clear"></div>
+					</div>
+				</div>
+				<div class="foo_right">
+					<p class="toptit">关注我们</p>
+					<div class="foo_code">
+						<div class="code">
+							<img src="images/index/code1.jpg"/>
+							<div class="cft">
+								<p>上交会微信二维码</p>
+								<p>CSITF WeChat</p>
+							</div>
+						</div>
+						<div class="code">
+							<img src="images/index/code2.jpg"/>
+							<div class="cft">
+								<p>技术贸易促进365联盟</p>
+							</div>
+						</div>						
+					</div>
+				</div>
+				<div class="clear"></div>
+			</div>
+		</div>
+		<div class="foo_bot">
+			<div class="main">
+				<p class="fl">沪ICP备13046901号</p>
+				<p class="fr">@版权所有 东浩兰生（集团）有限公司   |   86-21-63539977转1532</p>
+			</div>
+		</div>		
+	</footer>
+	<!--wow.js加载-->
+  	<script> 	
+		if (screen.width>750){
+	      if (!(/msie [6|7|8|9]/i.test(navigator.userAgent))){
+	        new WOW().init();
+	      };				
+		}  		
+    </script>  		
+</body>
+</html>

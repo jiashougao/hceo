@@ -1,0 +1,306 @@
+<!doctype html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta http-equiv="Content-Language" content="zh-CN">
+	<title>暂无标题</title>
+	<meta name="keywords" content="">
+	<meta name="description" content="">
+	<meta name="copyright" content="" />
+	<meta name="viewport" content="user-scalable=no,width=device-width, initial-scale=1.0">
+	<!--[if IE]>
+	   <script src="js/html5.js"></script>
+	<![endif]-->
+	<script src="js/jquery-1.9.1.min.js"></script>
+	<script src="js/swiper.min.js"></script>
+	<script src="js/wow.js"></script>
+	<script src="js/common.js"></script>
+
+	<link media="screen and (min-width:751px)" href="css/animate.min.css" rel="stylesheet" type="text/css" />
+	<link href="css/swiper.min.css" rel="stylesheet" type="text/css" />
+	<link href="css/common.css" rel="stylesheet" type="text/css" />
+	<link media="screen and (min-width:751px)" rel="stylesheet" href="css/style.css">
+	<link media="screen and (max-width:751px)" rel="stylesheet" href="css/style-phone.css">
+
+	<script type="text/javascript">
+	  $(document).ready(function(){
+		  heaSearch();//头部搜索
+		  navMenu();//导航
+		  seaDown();//展位号排序下拉
+	  });
+	</script>
+
+</head>
+
+<body class="wow fadeIn animated">
+	<!-- 头部 -->
+	<header class="header">
+		<div class="main">
+			<!-- logo -->
+			<div class="logo wow fadeInUp animated">
+				<a href=""><img src="images/index/logo.png" alt=""></a>
+			</div>
+			<!-- PC右侧 -->
+			<div class="hea_right wow fadeInUp animated">
+				<div class="hea_search">
+					<input type="text" class="hea_txt" placeholder="请输入搜索内容" />
+					<input type="submit" class="hea_sub"  />
+				</div>
+				<menu>
+					<a href="">注册</a>
+					<a href="">登录</a>
+				</menu>
+				<!-- 英文切换 国旗 -->
+				<a href="" class="hea_flag"></a>
+			</div>
+			<!-- 移动端菜单按钮 -->
+			<div class="hea_menuclick">
+				<div class="menu_con">
+				  <div class="menu_bor menu_bortop">
+				  </div>
+				  <div class="menu_bor menu_borcen">
+				  </div>
+				  <div class="menu_bor menu_borbot">
+				  </div>				  
+				</div>				
+			</div>
+			<!-- 菜单 -->
+			<div class="hea_menuhide wow animated fadeInUp" data-wow-delay="0.2s">
+				<ul class="hea_menu">
+					<li>
+						<a href="">首页</a>
+					</li>
+					<li>
+						<a href="">关于上交会</a>
+					</li>
+					<li>
+						<a href="">上交会发布</a>
+					</li>
+					<li>
+						<a href="">展会服务</a>
+					</li>												
+				</ul>
+				<div class="hea_menubg"></div>
+			</div>
+			<div class="clear"></div>
+		</div>
+	</header>
+	<div class="h12"></div>
+	<!-- 主体内容 -->
+	<div class="register_con">
+		<div class="regt_top">
+			<span></span>
+			<b>展商注册</b>
+			<span></span>
+		</div>
+		<div class="reg_main">
+			<!--<div class="reg_one">
+				<form>
+					<div class="reg_input">
+						<p class="reg_tit">用户名 <span>*</span></p>
+						<input type="text" id="ex_name"  placeholder="请输入用户名" />
+					</div>	
+					<div class="reg_input">
+						<p class="reg_tit">用户密码 <span>*</span></p>
+						<input type="password" id="ex_pass"  placeholder="请输入密码（不少于6位的数字加字母组合）" />
+					</div>	
+					<div class="reg_input">
+						<p class="reg_tit">确认密码 <span>*</span></p>
+						<input type="password" id="ex_pwdpass"  placeholder="请确认密码" />
+					</div>						
+					<div class="reg_sub">
+						<input type="submit" id="reg_subone" value="下一步" />
+					</div>						
+				</form>				
+			</div>-->
+			<div class="reg_two">
+				<form>
+					<div class="reg_input">
+						<p class="reg_tit reg_twotit">公司/机构全称(中文) <span>*</span><b>(如无中文可填英文全称)</b></p>
+						<input type="text" id="ex_companyname" placeholder="请输入公司/机构全称" />
+					</div>
+					<div class="reg_input">
+						<p class="reg_tit">公司/机构全称(英文)</p>
+						<input type="email" placeholder="请输入公司/机构全称" />
+					</div>							
+					<div class="reg_input">
+						<p class="reg_tit">社会统一信用代码</p>
+						<input type="text" placeholder="请输入您的社会统一信用代码" />
+					</div>	
+					<div class="reg_select">
+						<p class="reg_tit">公司/机构地区 <span>*</span></p>
+						<div class="regslt">
+							<select>
+								<option>中国</option>
+								<option>中国</option>
+							</select>
+							<select>
+								<option>重庆</option>
+								<option>上海</option>
+							</select>
+							<select>
+								<option>江北区</option>
+								<option>渝北区</option>
+							</select>					
+						</div>			
+					</div>
+					<div class="reg_input">
+						<p class="reg_tit reg_twotit">公司/机构地址(中文) <span>*</span><b>(如无中文可填英文地址)</b></p>
+						<input type="text" id="ex_address"  placeholder="请输入您的公司/机构所在地地址(中文)" />
+					</div>	
+					<div class="reg_input">
+						<p class="reg_tit">公司/机构地址(英文)</p>
+						<input type="text" placeholder="请输入您的公司/机构所在地地址(英文)" />
+					</div>	
+					<div class="reg_settwo">
+						<p class="reg_tit"> 公司性质 <span>*</span></p>
+						<select>
+							<option>国营企业</option>
+							<option>港澳台企业</option>
+							<option>民营企业</option>
+							<option>外商独资企业</option>
+							<option>中外合资/合作企业</option>
+							<option>境外企业</option>
+							<option>代理国际品牌的内资企业</option>
+							<option>境外企业国内办事处</option>				
+						</select>	
+					</div>		
+					<div class="reg_input">
+						<p class="reg_tit">公司网址</p>
+						<input type="text" placeholder="请输入您的公司网址" />
+					</div>	
+					<div class="reg_input">
+						<p class="reg_tit">公司电话</p>
+						<input type="text" placeholder="请输入您的座机电话" />
+					</div>	
+					<div class="reg_input">
+						<p class="reg_tit">公共邮箱</p>
+						<input type="text" placeholder="请输入您的公共邮箱" />
+					</div>
+					<div class="reg_input">
+						<p class="reg_tit">管理员姓名 <span>*</span></p>
+						<input type="tel" id="ex_admin_name" placeholder="请输入管理员姓名" />
+					</div>					
+					<div class="reg_input">
+						<p class="reg_tit">管理员手机 <span>*</span></p>
+						<input type="tel" id="ex_admin_phone" placeholder="请输入管理员手机号" />
+					</div>
+					<div class="reg_input">
+						<p class="reg_tit">管理员邮箱 <span>*</span></p>
+						<input type="email" id="ex_admin_email" placeholder="请输入您的邮箱" />
+					</div>	
+					<div class="reg_input">
+						<p class="reg_tit">部门职务</p>
+						<input type="text" placeholder="请输入您的部门职务" />
+					</div>					
+					<div class="reg_sub">
+						<input type="submit" id="reg_subtwo" value="立即注册" />
+					</div>											
+				</form>		
+			</div>
+		</div>		
+	</div>
+	<!--底部-->
+	<footer class="page_footer">
+		<div class="foo_top">
+			<div class="main">
+				<div class="foo_left">
+					<p class="toptit">组织机构</p>
+					<div class="foo_lcon">
+						<ul>
+							<li>主办单位</li>
+							<li>- 中华人民共和国商务部</li>
+							<li>- 中华人民共和国科学技术部</li>
+							<li>- 中华人民共和国国家知识产权局</li>
+							<li>- 上海市人民政府</li>
+						</ul>
+						<ul>
+							<li>支持单位</li>
+							<li>- 中华人民共和国商务部</li>
+							<li>- 中华人民共和国科学技术部</li>
+							<li>- 中华人民共和国国家知识产权局</li>
+							<li>- 上海市人民政府</li>
+						</ul>
+						<ul>
+							<li>主办单位</li>
+							<li>- 中华人民共和国商务部</li>
+							<li>- 中华人民共和国科学技术部</li>
+							<li>- 中华人民共和国国家知识产权局</li>
+							<li>- 上海市人民政府</li>
+						</ul>
+						<div class="clear"></div>
+					</div>
+				</div>
+				<div class="foo_right">
+					<p class="toptit">关注我们</p>
+					<div class="foo_code">
+						<div class="code">
+							<img src="images/index/code1.jpg"/>
+							<div class="cft">
+								<p>上交会微信二维码</p>
+								<p>CSITF WeChat</p>
+							</div>
+						</div>
+						<div class="code">
+							<img src="images/index/code2.jpg"/>
+							<div class="cft">
+								<p>技术贸易促进365联盟</p>
+							</div>
+						</div>						
+					</div>
+				</div>
+				<div class="clear"></div>
+			</div>
+		</div>
+		<div class="foo_bot">
+			<div class="main">
+				<p class="fl">沪ICP备13046901号</p>
+				<p class="fr">@版权所有 东浩兰生（集团）有限公司   |   86-21-63539977转1532</p>
+			</div>
+		</div>		
+	</footer>
+	<!--wow.js加载-->
+  	<script> 	
+		if (screen.width>750){
+	      if (!(/msie [6|7|8|9]/i.test(navigator.userAgent))){
+	        new WOW().init();
+	      };				
+		}  		
+    </script>  	
+    <!--注册js-->
+    <script>
+		$(function(){
+	        var regtel = /^1[3456789]\d{9}$/;//手机号正则
+	        var emreg = /^([a-zA-Z0-9]+[_|\_|\.]?)*[a-zA-Z0-9]+@([a-zA-Z0-9]+[_|\_|\.]?)*[a-zA-Z0-9]+\.[a-zA-Z]{2,3}$/;  //邮箱正则
+	        var psdreg = /^(?![0-9]+$)(?![a-zA-Z]+$)(?!([^(0-9a-zA-Z)]|[])+$)([^(0-9a-zA-Z)]|[]|[a-zA-Z]|[0-9]){6,}$/;//密码	
+//	        $("#reg_subtwo").click(function(){
+//	        	var exname = $("#ex_companyname").val();
+//	        	var exaddress = $("#ex_address").val();
+//	        	var exadmin_name = $("#ex_admin_name").val();
+//	        	var exadmin_phone = $("#ex_admin_phone").val();
+//	        	var exadmin_email = $("#ex_admin_email").val();
+//	        	if(exname==''){
+//	        		alert("公司/机构全称不能为空，请重新输入")
+//	        		return false;
+//	        	}
+//	        	if(exaddress==''){
+//	        		alert("公司/机构地址不能为空，请重新输入")
+//	        		return false;
+//	        	}	 
+//	        	if(exadmin_name==''){
+//	        		alert("管理员姓名不能为空，请重新输入")
+//	        		return false;
+//	        	}
+//	        	if(!regtel.test(exadmin_phone)){
+//	        		alert("管理员手机格式错误，请重新输入")
+//	        		return false;
+//	        	}	        	
+//	        	if(!psdreg.test(exadmin_email)){
+//	        		alert("管理员邮箱格式错误，请重新输入")
+//	        		return false;
+//	        	}	        	
+//	        })
+		})
+    </script>
+</body>
+</html>

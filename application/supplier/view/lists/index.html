@@ -1,0 +1,213 @@
+{extend name="common@web/share/layout"}
+
+{block name="title"}
+展商信息
+{/block}
+
+{block name="content"}
+
+<div class="h12"></div>
+
+	<!-- 视频 -->
+	<div class="vdo_top">
+		<div class="vdo_con">
+			<a class="vdo"></a>
+			<video width="100%" height="100%">
+
+			</video>
+		</div>
+	</div>
+
+	<!-- 主体内容 -->
+	<div class="page_main">
+		<!-- 左侧 -->
+		<div class="page_left">
+			<!--左侧顶部-->
+			<div class="vdo_ltop">
+				<p class="vl_tit">所有展商</p>
+				<div class="vl_slt">
+					<p class="vl_p" data-val="boPo">展位号正序</p>
+					<menu class="vl_key_hide">
+						<a class="boPo">展位号正序</a>
+						<a class="boRe">展位号倒序</a>
+						<a class="initials">首字母排序</a>
+						<a class="hot">热度排序</a>
+					</menu>
+				</div>
+				<div class="vl_sea">
+					<input type="text" class="vlsea_txt" placeholder="输入产品/品牌名称" />
+					<input type="submit" class="vlsea_sub">
+				</div>
+				<!--a标签上加上 sel变色-->
+				<!--<div class="vl_block"><a  href=""></a></div>-->
+				<div class="vl_menu"><a class="sel" href=""></a></div>
+			</div>
+			<!--列表-->
+			<div class="vdo_ul">
+				<ul>
+
+					{volist name="data_search" id="vo"}
+						<li>
+							<a href="/supplier/details/index?id={$vo.id}">
+								<div class="vdo_limg">
+									<img src="{$vo.logo|esc_img_url}" >
+								</div>
+								<div class="vdo_cen">
+									<p class="textover p1">{$vo.name}</p>
+									<p class="textover p2">展区：{$vo.booth_area}</p>
+									<p class="textover p3">展位：{$vo.booth_no}</p>
+								</div>
+								<div class="vdo_rmore">查看所有商品 ></div>
+							</a>
+						</li>
+					{/volist}
+				</ul>
+			</div>
+
+
+			<!-- PC页码 -->
+			<div class="page_num">
+				<a href="" class="disabled">首页</a>
+				<a href="">1</a>
+				<a href="">2</a>
+				<span>...</span>
+				<a href="">6</a>
+				<a href="">尾页</a>
+				<b class="num_b">跳转至</b>
+				<input type="tel"  value="1" />
+				<b>页</b>
+				<b>共8页</b>	
+			</div>
+
+
+			<!--PH加载更多-->
+			<div class="page_more"><a href="">加载更多</a></div>
+		</div>
+
+
+		<!-- 右侧 -->
+		<div class="page_right">
+			<div class="page_rtop">推荐展商</div>
+			<ul class="rec_ul">
+
+				{volist name="data_recommend" id="vo"}
+					<li>
+						<a href="/supplier/details/index?id={$vo.id}">
+							<div class="rec_img">
+								<img src="{$vo.logo|esc_img_url}"/>
+							</div>
+							<div class="rec_rcon">
+								<p class="textover p1">{$vo.name}</p>
+								<p class="textover p2">{$vo.booth_area} - {$vo.booth_no}</p>
+							</div>
+						</a>
+					</li>
+				{/volist}
+
+			</ul>
+		</div>
+		<div class="clear"></div>
+	</div>
+
+	<div class="h140"></div>
+
+{/block}
+
+
+</body>
+</html>
+{block name="script"}
+<script>
+
+
+
+    function getQueryVariable(variable)
+    {
+        var query = window.location.search.substring(1);
+        var vars = query.split("&");
+        for (var i=0;i<vars.length;i++) {
+            var pair = vars[i].split("=");
+            if(pair[0] == variable){return pair[1];}
+        }
+        return(false);
+    }
+    var ss =  getQueryVariable('search');
+    if (ss){
+        $(".vlsea_txt").val(ss);
+	}
+
+	var oo = getQueryVariable('order');
+    if (oo=='boPo'){
+        $(".vl_p").html($(".boPo").html());
+        vl_p_attr('boPo')
+	}
+    if (oo=='boRe'){
+        $(".vl_p").html($(".boRe").html());
+        vl_p_attr('boRe')
+    }
+	if (oo=='initials'){
+        $(".vl_p").html($(".initials").html());
+        vl_p_attr('initials')
+	}
+    if (oo=='hot'){
+        $(".vl_p").html($(".hot").html());
+        vl_p_attr('hot')
+    }
+
+	//正序
+	$(".boPo").click(function () {
+		var link = '/supplier/lists/index'+'?order=boPo';
+        var serach = $(".vlsea_txt").val();
+        if(serach != '' || serach!=null){
+             link = '/supplier/lists/index'+'?order=boPo&search='+serach;
+        }
+        vl_p_attr('boPo');
+		window.location.href = link;
+    });
+	//倒序
+    $(".boRe").click(function () {
+        var link = '/supplier/lists/index'+'?order=boRe';
+        var serach = $(".vlsea_txt").val();
+        if(serach != '' || serach!=null){
+            link = '/supplier/lists/index'+'?order=boRe&search='+serach;
+        }
+        vl_p_attr('boRe');
+        window.location.href = link;
+    });
+
+    $(".initials").click(function () {
+        var link = '/supplier/lists/index'+'?order=initials';
+        var serach = $(".vlsea_txt").val();
+        if(serach != '' || serach!=null){
+            link = '/supplier/lists/index'+'?order=initials&search='+serach;
+        }
+        vl_p_attr("initials")
+        window.location.href = link;
+    });
+    //倒序
+    $(".hot").click(function () {
+        var link = '/supplier/lists/index'+'?order=hot';
+        var serach = $(".vlsea_txt").val();
+        if(serach != '' || serach!=null){
+            link = '/supplier/lists/index'+'?order=hot&search='+serach;
+        }
+        vl_p_attr("hot")
+        window.location.href = link;
+    });
+
+    function vl_p_attr(val) {
+        $(".vl_p").attr('data-val',val);
+    }
+
+
+    //搜索
+	$(".vlsea_sub").click(function () {
+
+        var serach = $(".vlsea_txt").val();
+   		var order  = $(".vl_p").attr('data-val');
+        var link = '/supplier/lists/index'+'?order='+order+'&search='+serach;
+
+        window.location.href = link;
+    })
+</script>
+{/block}

@@ -1,0 +1,362 @@
+<!doctype html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta http-equiv="Content-Language" content="zh-CN">
+	<title>首页</title>
+	<meta name="keywords" content="">
+	<meta name="description" content="">
+	<meta name="copyright" content="" />
+	<meta name="viewport" content="user-scalable=no,width=device-width, initial-scale=1.0">
+	<!--[if IE]>
+	<script src="/static/js/html5.js"></script>
+	<![endif]-->
+	<script src="/static/js/jquery-1.9.1.min.js"></script>
+	<script src="/static/js/swiper.min.js"></script>
+	<script src="/static/js/wow.js"></script>
+	<script src="/static/js/common.js"></script>
+
+	<link media="screen and (min-width:751px)" href="/static/css/animate.min.css" rel="stylesheet" type="text/css" />
+	<link href="/static/css/swiper.min.css" rel="stylesheet" type="text/css" />
+	<link href="/static/css/common.css" rel="stylesheet" type="text/css" />
+	<link media="screen and (min-width:751px)" rel="stylesheet" href="/static/css/style.css">
+	<link media="screen and (max-width:751px)" rel="stylesheet" href="/static/css/style-phone.css">
+
+	<script type="text/javascript">
+	  $(document).ready(function(){
+		  heaSearch();//头部搜索
+		  navMenu();//导航
+	  });
+	</script>
+
+</head>
+
+<body class="wow fadeIn animated">
+	<!-- 头部 -->
+	<header class="header index_hea">
+		<div class="main">
+			<!-- logo -->
+			<div class="logo wow fadeInUp animated">
+				<a href=""><img src="/static/images/index/logo.png" alt=""></a>
+			</div>
+			<!-- PC右侧 -->
+			<div class="hea_right wow fadeInUp animated">
+				<div class="hea_search">
+					<input type="text" class="hea_txt" placeholder="请输入搜索内容" />
+					<input type="submit" class="hea_sub"  />
+				</div>
+				<menu>
+					<a href="">注册</a>
+					<a href="">登录</a>
+				</menu>
+				<!-- 英文切换 国旗 -->
+				<a href="" class="hea_flag"></a>
+			</div>
+			<!-- 移动端菜单按钮 -->
+			<div class="hea_menuclick">
+				<div class="menu_con">
+				  <div class="menu_bor menu_bortop">
+				  </div>
+				  <div class="menu_bor menu_borcen">
+				  </div>
+				  <div class="menu_bor menu_borbot">
+				  </div>				  
+				</div>				
+			</div>
+			<!-- 菜单 -->
+			<div class="hea_menuhide wow animated fadeInUp" data-wow-delay="0.2s">
+				<ul class="hea_menu">
+					<li>
+						<a href="">首页</a>
+					</li>
+					<li>
+						<a href="">关于上交会</a>
+					</li>
+					<li>
+						<a href="">上交会发布</a>
+					</li>
+					<li>
+						<a href="">展会服务</a>
+					</li>												
+				</ul>
+				<div class="hea_menubg"></div>
+			</div>
+			<div class="clear"></div>
+		</div>
+	</header>
+	<div class="h12"></div>
+	<!--banner-->
+	<div class="banner">
+		<ul class="swiper-wrapper">
+			<li class="swiper-slide">
+				<a href="" title="" style="background-image: url(/static/images/index/banner.jpg);"></a>
+			</li>
+			<li class="swiper-slide">
+				<a href="" title="" style="background-image: url(/static/images/index/banner.jpg);"></a>
+			</li>
+			<li class="swiper-slide">
+				<a href="" title="" style="background-image: url(/static/images/index/banner.jpg);"></a>
+			</li>			
+		</ul>
+		<div class="banner_num"></div>
+	</div>	
+	<!--展会三个入口-->
+	<div class="index_entrance">
+		<ul>
+			<li class="animated wow fadeInUp" data-wow-delay="0.2s">
+				<a href="">
+					<img src="/static/images/index/img1.jpg"/>
+					<div class="mask"></div>
+				</a>
+			</li>
+			<li class="animated wow fadeInUp" data-wow-delay="0.2s">
+				<a href="">
+					<img src="/static/images/index/img2.jpg"/>
+					<div class="mask mask2"></div>
+				</a>
+			</li>
+			<li class="animated wow fadeInUp" data-wow-delay="0.2s">
+				<a href="">
+					<img src="/static/images/index/img3.jpg"/>
+				</a>
+			</li>			
+		</ul>
+		<div class="clear"></div>
+	</div>
+	<!--新闻动态-->
+	<div class="index_news">
+		<div class="inxnews_con">
+			<ul class="lul">
+				<li class="animated wow bounceIn" data-wow-delay="0s">
+					<a href=""><img src="/static/images/index/new_img1.png"/></a>
+				</li>
+				<li class="animated wow bounceIn" data-wow-delay="0.3s">
+					<a href=""><img src="/static/images/index/new_img2.png"/></a>
+				</li>
+				<li class="animated wow bounceIn" data-wow-delay="0.6s">
+					<a href=""><img src="/static/images/index/new_img3.png"/></a>
+				</li>				
+			</ul>
+			<div class="rcon animated wow zoomIn" data-wow-delay="0.6s">
+				<ul class="rul">
+					{foreach name="news" item="new" key="newKey"}
+					<li>
+						<a href="">
+							<p class="textover">{$new.title}</p>
+							<div class="font">
+								{$new.content}
+							</div>
+						</a>
+					</li>
+					{/foreach}
+				</ul>
+				<div class="more">
+					<a href="">了解更多</a>
+				</div>
+			</div>
+			<div class="clear"></div>
+		</div>
+	</div>
+	<div class="h130"></div>
+	<!--底部-->
+	<footer class="footer">
+		<div class="foo_top">
+			<div class="main">
+				<div class="foo_left">
+					<p class="toptit">组织机构</p>
+					<ul>
+						<li>主办单位</li>
+						<li>- 中华人民共和国商务部</li>
+						<li>- 中华人民共和国科学技术部</li>
+						<li>- 中华人民共和国国家知识产权局</li>
+						<li>- 上海市人民政府</li>
+					</ul>
+					<ul>
+						<li>支持单位</li>
+						<li>- UNIDO联合国工业发展组织</li>
+						<li>- UNDP联合国开发计划署</li>
+						<li>- WIPO世界知识产权组织</li>
+					</ul>
+					<ul>
+						<li>承办单位</li>
+						<li>- 上海市国际技术进出口促进中心</li>
+						<li>- 中国机电产品进出口商会</li>
+						<li>- 东浩兰生（集团）有限公司</li>
+					</ul>
+				</div>
+				<div class="foo_cen">
+					<p class="toptit">组织机构</p>
+					<div class="foo_coop">
+						<ul class="swiper-wrapper">
+							<li class="swiper-slide">
+								<a href="">
+									<img src="/static/images/index/cimg.jpg" alt=""/>
+								</a>
+							</li>	
+							<li class="swiper-slide">
+								<a href="">
+									<img src="/static/images/index/cimg.jpg" alt=""/>
+								</a>
+							</li>
+							<li class="swiper-slide">
+								<a href="">
+									<img src="/static/images/index/cimg.jpg" alt=""/>
+								</a>
+							</li>	
+							<li class="swiper-slide">
+								<a href="">
+									<img src="/static/images/index/cimg.jpg" alt=""/>
+								</a>
+							</li>	
+							<li class="swiper-slide">
+								<a href="">
+									<img src="/static/images/index/cimg.jpg" alt=""/>
+								</a>
+							</li>
+							<li class="swiper-slide">
+								<a href="">
+									<img src="/static/images/index/cimg.jpg" alt=""/>
+								</a>
+							</li>
+							<li class="swiper-slide">
+								<a href="">
+									<img src="/static/images/index/cimg.jpg" alt=""/>
+								</a>
+							</li>	
+							<li class="swiper-slide">
+								<a href="">
+									<img src="/static/images/index/cimg.jpg" alt=""/>
+								</a>
+							</li>
+							<li class="swiper-slide">
+								<a href="">
+									<img src="/static/images/index/cimg.jpg" alt=""/>
+								</a>
+							</li>	
+							<li class="swiper-slide">
+								<a href="">
+									<img src="/static/images/index/cimg.jpg" alt=""/>
+								</a>
+							</li>	
+							<li class="swiper-slide">
+								<a href="">
+									<img src="/static/images/index/cimg.jpg" alt=""/>
+								</a>
+							</li>
+							<li class="swiper-slide">
+								<a href="">
+									<img src="/static/images/index/cimg.jpg" alt=""/>
+								</a>
+							</li>	
+							<li class="swiper-slide">
+								<a href="">
+									<img src="/static/images/index/cimg.jpg" alt=""/>
+								</a>
+							</li>	
+							<li class="swiper-slide">
+								<a href="">
+									<img src="/static/images/index/cimg.jpg" alt=""/>
+								</a>
+							</li>
+							<li class="swiper-slide">
+								<a href="">
+									<img src="/static/images/index/cimg.jpg" alt=""/>
+								</a>
+							</li>
+							<li class="swiper-slide">
+								<a href="">
+									<img src="/static/images/index/cimg.jpg" alt=""/>
+								</a>
+							</li>	
+							<li class="swiper-slide">
+								<a href="">
+									<img src="/static/images/index/cimg.jpg" alt=""/>
+								</a>
+							</li>
+							<li class="swiper-slide">
+								<a href="">
+									<img src="/static/images/index/cimg.jpg" alt=""/>
+								</a>
+							</li>
+							<li class="swiper-slide">
+								<a href="">
+									<img src="/static/images/index/cimg.jpg" alt=""/>
+								</a>
+							</li>	
+							<li class="swiper-slide">
+								<a href="">
+									<img src="/static/images/index/cimg.jpg" alt=""/>
+								</a>
+							</li>
+							<li class="swiper-slide">
+								<a href="">
+									<img src="/static/images/index/cimg.jpg" alt=""/>
+								</a>
+							</li>
+							<li class="swiper-slide">
+								<a href="">
+									<img src="/static/images/index/cimg.jpg" alt=""/>
+								</a>
+							</li>	
+							<li class="swiper-slide">
+								<a href="">
+									<img src="/static/images/index/cimg.jpg" alt=""/>
+								</a>
+							</li>
+							<li class="swiper-slide">
+								<a href="">
+									<img src="/static/images/index/cimg.jpg" alt=""/>
+								</a>
+							</li>							
+						</ul>
+						<div class="foocop_num"></div>
+						<div class="clear"></div>
+					</div>
+				</div>
+				<div class="foo_right">
+					<p class="toptit">联系方式</p>
+					<ul>
+						<li>东浩兰生（集团）有限公司</li>
+						<li>上海外经贸商务展览有限公司</li>
+						<li>上海市天目西路511号锦程大厦12楼   邮编：200070</li>
+					</ul>
+					<ul>
+						<li>联系人：</li>
+						<li>宋先生 电话：+8621 66770292</li>
+						<li>电子邮箱：songyanan@csitf.com</li>
+					</ul>
+					<ul>
+						<li>陈女士 电话：+8621 66770319</li>
+						<li>电子邮箱：chenlu@itpc.com.cn</li>
+						<li>传真：+8621 33035028</li>
+					</ul>	
+					<ul>
+						<li>如您有任何疑问和建议</li>
+						<li>请发送邮件至info@csitf.com</li>
+						<li>我们会及时为您回复</li>
+					</ul>						
+				</div>
+				<div class="clear"></div>
+			</div>
+		</div>
+		<div class="foo_bot">
+			<div class="main">
+				<p class="fl">沪ICP备13046901号</p>
+				<p class="fr">@版权所有 东浩兰生（集团）有限公司   |   86-21-63539977转1532</p>
+			</div>
+		</div>
+	</footer>
+	<!--wow.js加载-->
+  	<script> 	
+		if (screen.width>750){
+	      if (!(/msie [6|7|8|9]/i.test(navigator.userAgent))){
+	        new WOW().init();
+	      };				
+		}  	
+		
+		function page() {
+
+		}
+    </script>  		
+</body>
+</html>

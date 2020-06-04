@@ -1,0 +1,371 @@
+<!doctype html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta http-equiv="Content-Language" content="zh-CN">
+	<title>暂无标题</title>
+	<meta name="keywords" content="">
+	<meta name="description" content="">
+	<meta name="copyright" content="" />
+	<meta name="viewport" content="user-scalable=no,width=device-width, initial-scale=1.0">
+	<!--[if IE]>
+	   <script src="js/html5.js"></script>
+	<![endif]-->
+	<script src="js/jquery-1.9.1.min.js"></script>
+	<script src="js/swiper.min.js"></script>
+	<script src="js/wow.js"></script>
+	<script src="js/common.js"></script>
+
+	<link media="screen and (min-width:751px)" href="css/animate.min.css" rel="stylesheet" type="text/css" />
+	<link href="css/swiper.min.css" rel="stylesheet" type="text/css" />
+	<link href="css/common.css" rel="stylesheet" type="text/css" />
+	<link media="screen and (min-width:751px)" rel="stylesheet" href="css/style.css">
+	<link media="screen and (max-width:751px)" rel="stylesheet" href="css/style-phone.css">
+
+	<script type="text/javascript">
+	  $(document).ready(function(){
+		  heaSearch();//头部搜索
+		  navMenu();//导航
+		  seaDown();//展位号排序下拉
+		  personalTab(".regcen_tab a",".reg_show",0);//买家个人中心tab切换
+	  });
+	</script>
+
+</head>
+
+<body class="wow fadeIn animated">
+	<!-- 头部 -->
+	<header class="header">
+		<div class="main">
+			<!-- logo -->
+			<div class="logo wow fadeInUp animated">
+				<a href=""><img src="images/index/logo.png" alt=""></a>
+			</div>
+			<!-- PC右侧 -->
+			<div class="hea_right wow fadeInUp animated">
+				<div class="hea_search">
+					<input type="text" class="hea_txt" placeholder="请输入搜索内容" />
+					<input type="submit" class="hea_sub"  />
+				</div>
+				<menu>
+					<a href="">注册</a>
+					<a href="">登录</a>
+				</menu>
+				<!-- 英文切换 国旗 -->
+				<a href="" class="hea_flag"></a>
+			</div>
+			<!-- 移动端菜单按钮 -->
+			<div class="hea_menuclick">
+				<div class="menu_con">
+				  <div class="menu_bor menu_bortop">
+				  </div>
+				  <div class="menu_bor menu_borcen">
+				  </div>
+				  <div class="menu_bor menu_borbot">
+				  </div>				  
+				</div>				
+			</div>
+			<!-- 菜单 -->
+			<div class="hea_menuhide wow animated fadeInUp" data-wow-delay="0.2s">
+				<ul class="hea_menu">
+					<li>
+						<a href="">首页</a>
+					</li>
+					<li>
+						<a href="">关于上交会</a>
+					</li>
+					<li>
+						<a href="">上交会发布</a>
+					</li>
+					<li>
+						<a href="">展会服务</a>
+					</li>												
+				</ul>
+				<div class="hea_menubg"></div>
+			</div>
+			<div class="clear"></div>
+		</div>
+	</header>
+	<div class="h12"></div>
+	<!-- 主体内容 -->
+	<div class="user_center">
+		<div class="user_left">
+			<!--<div class="user_ltop">
+				<div class="user_ltit">用户中心</div>
+				<div class="user_img">
+					<img src="https://server.messecloud.com/static/site_online/img/user_center/avatar.jpg?v=1.0.1.226"/>
+				</div>				
+			</div>-->
+			<div class="user_lmenu">
+				<div class="user_ltit">菜单</div>
+				<menu>
+					<a href="" class="sel">账户管理</a>
+				</menu>
+			</div>
+		</div>
+		<div class="user_right">
+			<div class="register_con">
+				<div class="regcen_top">
+					<p class="ltit">账户管理</p>
+					<p class="rhome"><a href="">返回用户中心首页</a></p>
+				</div>
+				<div class="regcen_tab">
+					<a>个人资料</a>
+					<a>修改密码</a>
+					<a>修改手机</a>
+					<a>修改邮箱</a>
+				</div>
+				<div class="reg_showcon">
+					<div class="reg_show">
+						<div class="reg_main">
+							<form>
+								<div class="reg_input">
+									<p class="reg_tit">姓名 <span>*</span></p>
+									<input type="text" id="reg_name" value="黄小明" />
+								</div>						
+								<div class="reg_input">
+									<p class="reg_tit">部门职务</p>
+									<input type="text"  value="前端开发" />
+								</div>			
+								<div class="reg_input">
+									<p class="reg_tit">社会统一信用代码</p>
+									<input type="text" value="" />
+								</div>	
+								<div class="reg_select">
+									<p class="reg_tit">公司/机构地区</p>
+									<div class="regslt">
+										<select>
+											<option>中国</option>
+											<option>中国</option>
+										</select>
+										<select>
+											<option>重庆</option>
+											<option>上海</option>
+										</select>
+										<select>
+											<option>江北区</option>
+											<option>渝北区</option>
+										</select>					
+									</div>			
+								</div>
+								<div class="reg_input">
+									<p class="reg_tit reg_twotit">公司/机构地址(中文) <b>(如无中文可填英文地址)</b></p>
+									<input type="text" value="重庆市江北区" />
+								</div>	
+								<div class="reg_input">
+									<p class="reg_tit">公司/机构地址(英文)</p>
+									<input type="text" value="hello" />
+								</div>	
+								<div class="reg_settwo">
+									<p class="reg_tit">公司性质</p>
+									<select>
+										<option>国营企业</option>
+										<option>港澳台企业</option>
+										<option>民营企业</option>
+										<option>外商独资企业</option>
+										<option>中外合资/合作企业</option>
+										<option>境外企业</option>
+										<option>代理国际品牌的内资企业</option>
+										<option>境外企业国内办事处</option>				
+									</select>	
+								</div>		
+								<div class="reg_input">
+									<p class="reg_tit">网址</p>
+									<input type="text" value="http://www.xcntw.com/" />
+								</div>	
+								<div class="reg_input">
+									<p class="reg_tit">电话</p>
+									<input type="text" value="023-808088" />
+								</div>	
+								<div class="reg_input">
+									<p class="reg_tit">公共邮箱</p>
+									<input type="text" value="1335488027@qq.com" />
+								</div>
+								<div class="reg_sub">
+									<input type="submit" id="reg_subtwo" value="保存修改" />
+								</div>											
+							</form>		
+						</div>						
+					</div>	
+					<div class="reg_show">
+						<div class="reg_main">
+							<form>
+								<div class="reg_input">
+									<p class="reg_tit">当前密码 <span>*</span></p>
+									<input type="password" placeholder="没有密码，请留空"  value="" />
+								</div>		
+								<div class="reg_input">
+									<p class="reg_tit">新密码 <span>*</span></p>
+									<input type="password" placeholder="8-20位数字+字母"   value="" />
+								</div>	
+								<div class="reg_input">
+									<p class="reg_tit">确认密码 <span>*</span></p>
+									<input type="password" placeholder="请确认密码"  value="" />
+								</div>	
+								<div class="reg_sub">
+									<input type="submit" id="reg_subtwo" value="保存修改" />
+								</div>								
+							</form>		
+						</div>						
+					</div>
+					<div class="reg_show">
+						<div class="reg_main">
+							<form>			
+								<div class="reg_input">
+									<p class="reg_tit">原手机号 <span>*</span></p>
+									<input type="tel" value="15215083077" />
+								</div>									
+								<div class="reg_input">
+									<p class="reg_tit">新手机号 <span>*</span></p>
+									<input type="tel" placeholder="请输入新手机号" id="reg_phone" value="" />
+								</div>	
+								<div class="reg_code">
+									<p class="reg_tit">手机验证码 <span>*</span></p>
+									<div class="regcodecon">
+										<input type="text" placeholder="请输入验证码" />
+										<a>获取验证码</a>
+									</div>
+								</div>	
+								<div class="reg_code">
+									<p class="reg_tit">图形验证码 <span>*</span></p>
+									<div class="regcodecon">
+										<input type="text" placeholder="请输入验证码" />
+										<a><img src="images/yzm.jpg"/></a>
+									</div>
+								</div>								
+								<div class="reg_sub">
+									<input type="submit" id="reg_subtwo" value="保存修改" />
+								</div>								
+							</form>		
+						</div>						
+					</div>
+					<div class="reg_show">
+						<div class="reg_main">
+							<form>
+								<div class="reg_input">
+									<p class="reg_tit">原邮箱 <span>*</span></p>
+									<input type="email" id="reg_email" value="1335488027@qq.com" />
+								</div>	
+								<div class="reg_input">
+									<p class="reg_tit">新邮箱 <span>*</span></p>
+									<input type="email" placeholder="请输入新邮箱" value="" />
+								</div>
+								<div class="reg_code">
+									<p class="reg_tit">邮箱验证码 <span>*</span></p>
+									<div class="regcodecon">
+										<input type="text" placeholder="请输入验证码" />
+										<a>获取验证码</a>
+									</div>
+								</div>	
+								<div class="reg_code">
+									<p class="reg_tit">图形验证码 <span>*</span></p>
+									<div class="regcodecon">
+										<input type="text" placeholder="请输入验证码" />
+										<a><img src="images/yzm.jpg"/></a>
+									</div>
+								</div>									
+								<div class="reg_sub">
+									<input type="submit" id="reg_subtwo" value="保存修改" />
+								</div>											
+							</form>		
+						</div>						
+					</div>					
+				</div>
+			</div>			
+		</div>
+		<div class="clear"></div>
+	</div>
+	<!--底部-->
+	<footer class="page_footer">
+		<div class="foo_top">
+			<div class="main">
+				<div class="foo_left">
+					<p class="toptit">组织机构</p>
+					<div class="foo_lcon">
+						<ul>
+							<li>主办单位</li>
+							<li>- 中华人民共和国商务部</li>
+							<li>- 中华人民共和国科学技术部</li>
+							<li>- 中华人民共和国国家知识产权局</li>
+							<li>- 上海市人民政府</li>
+						</ul>
+						<ul>
+							<li>支持单位</li>
+							<li>- 中华人民共和国商务部</li>
+							<li>- 中华人民共和国科学技术部</li>
+							<li>- 中华人民共和国国家知识产权局</li>
+							<li>- 上海市人民政府</li>
+						</ul>
+						<ul>
+							<li>主办单位</li>
+							<li>- 中华人民共和国商务部</li>
+							<li>- 中华人民共和国科学技术部</li>
+							<li>- 中华人民共和国国家知识产权局</li>
+							<li>- 上海市人民政府</li>
+						</ul>
+						<div class="clear"></div>
+					</div>
+				</div>
+				<div class="foo_right">
+					<p class="toptit">关注我们</p>
+					<div class="foo_code">
+						<div class="code">
+							<img src="images/index/code1.jpg"/>
+							<div class="cft">
+								<p>上交会微信二维码</p>
+								<p>CSITF WeChat</p>
+							</div>
+						</div>
+						<div class="code">
+							<img src="images/index/code2.jpg"/>
+							<div class="cft">
+								<p>技术贸易促进365联盟</p>
+							</div>
+						</div>						
+					</div>
+				</div>
+				<div class="clear"></div>
+			</div>
+		</div>
+		<div class="foo_bot">
+			<div class="main">
+				<p class="fl">沪ICP备13046901号</p>
+				<p class="fr">@版权所有 东浩兰生（集团）有限公司   |   86-21-63539977转1532</p>
+			</div>
+		</div>		
+	</footer>
+	<!--wow.js加载-->
+  	<script> 	
+		if (screen.width>750){
+	      if (!(/msie [6|7|8|9]/i.test(navigator.userAgent))){
+	        new WOW().init();
+	      };				
+		}  		
+   </script>  
+    <!--注册js-->
+    <script>
+		$(function(){
+	        var regtel = /^1[3456789]\d{9}$/;//手机号正则
+	        var emreg = /^([a-zA-Z0-9]+[_|\_|\.]?)*[a-zA-Z0-9]+@([a-zA-Z0-9]+[_|\_|\.]?)*[a-zA-Z0-9]+\.[a-zA-Z]{2,3}$/;  //邮箱正则
+	        var psdreg = /^(?![0-9]+$)(?![a-zA-Z]+$)(?!([^(0-9a-zA-Z)]|[])+$)([^(0-9a-zA-Z)]|[]|[a-zA-Z]|[0-9]){6,}$/;//密码	
+	        $("#reg_subtwo").click(function(){
+	        	var name = $("#reg_name").val();
+	        	var tphone = $("#reg_phone").val();
+	        	var email = $("#reg_email").val();
+	        	if(name==''){
+	        		alert("姓名不能为空，请重新输入")
+	        		return false;
+	        	}
+	        	if(!regtel.test(tphone)){
+	        		alert("手机号格式错误，请重新输入")
+	        		return false;
+	        	}	 
+	        	if(!psdreg.test(email)){
+	        		alert("邮箱格式错误，请重新输入")
+	        		return false;
+	        	}	        	
+	        })
+		})
+    </script>   
+</body>
+</html>

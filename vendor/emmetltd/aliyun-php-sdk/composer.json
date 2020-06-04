@@ -1,0 +1,41 @@
+{
+    "name": "emmetltd/aliyun-php-sdk",
+    "description": "aliyun-php-sdk integration",
+    "type": "library",
+    "license": "Apache-2.0",
+    "authors": [
+        {
+            "name": "Emmetltd",
+            "email": "115376835@qq.com"
+        }
+    ],
+    "require": {
+        "php": ">=5.3",
+        "ext-openssl": "*",
+        "ext-json": "*",
+        "ext-simplexml": "*",
+        "ext-curl": "*"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "~4.8",
+        "mockery/mockery": "0.9.x-dev",
+        "fzaninotto/faker": "~1.8"
+    },
+    "autoload": {
+        "psr-4": {
+            "Emmetltd\\AliyunCore\\": "src/"
+        },
+        "classmap": [
+            "src/Auth/RamRoleArnService.php",
+            "src/Regions/LocationService.php"
+        ],
+        "files": [
+            "src/bootstrap.php"
+        ]
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "UnitTest\\": "tests/"
+        }
+    }
+}

@@ -1,0 +1,82 @@
+<div class="page_more" data-url="{$url}" onclick="window.mobileView.search()" data-page="2"><a >加载更多</a></div>
+<script>
+
+
+    window.mobileView={
+        pageIndex:2,
+        pageData:function(){
+            return  {
+                'type': 'supplier_detail',
+                'page': window.mobileView.pageIndex,
+                'page_size': 1,
+                'fetch_count': 'yes',
+                'supplier': $('#id').val()
+            };
+        },
+        search:function(){
+            $.ajax({
+                url:$(".page_more").data('url'),
+                type:"get",
+                dataType:'json',
+                data:{                  //根据自己的需求传值给接口获得请求
+                    'type':'supplier_detail',
+                    'page':window.mobileView.pageIndex,
+                    'page_size':1,
+                    'fetch_count':'yes',
+                    'supplier':$('#id').val()
+                },
+                success:function(res){
+                    console.log(res);
+                    //重新渲染分页
+                    if(res.errcode == 0){
+                        let html ="";
+                        if(res.data.items.length > 0) {
+                            for(let i=0;i<res.data.items.length;i++) {
+                                let poster = JSON.parse(res.data.items[i].poster);
+                                let postUrl = poster[0].url;
+                                html += "<li>" +
+                                    "<a href=''>" +
+                                    "<div class='img'>" +
+                                    "<img src='" + postUrl + "'/>" +
+                                    "</div>" +
+                                    "<p class='textover'>"+res.data.items[i].title+"</p>" +
+                                    "</a>" +
+                                    "</li>";
+                            }
+                        }else{
+                            $('.page_more').html('已加载全部')
+                        }
+                        $('.prodea_ul ul').append(html);
+
+                        window.mobileView.pageIndex ++;
+                        $('.page_more').data('page',window.mobileView.pageIndex );
+                    }
+                },
+                error:function(){
+                    alert("<?php echo __('网络错误');?>")
+                }
+            });
+        },
+    };
+
+
+
+    function get_paging(total_count,index) {
+        var paging = [];
+        var url_count = 5;
+        var pageSize = 1;
+        var page_count = Math.ceil(total_count/(pageSize*1.0));
+        paging.page_index = index;
+        paging.start_page_index = (index - url_count) > 0 ? (index - url_count) : 1;
+        paging.end_page_index = (index + url_count) <= page_count ? (index + url_count) : page_count;
+        paging.from_index = page_count==0?0:((index - 1) * pageSize + 1);
+        paging.to_index = (index >= page_count||page_count==0) ? total_count : (index * pageSize);
+        paging.is_last_page = index >= page_count || page_count == 0;
+        paging.is_first_page = index == 1 || page_count == 0;
+        paging.page_count = page_count;
+        paging.page_size = pageSize;
+        paging.total_count = total_count;
+        paging.url_count = url_count;
+        return paging;
+    }
+</script>

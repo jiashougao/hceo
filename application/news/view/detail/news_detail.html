@@ -1,0 +1,40 @@
+{extend name="common@web/share/layout"}
+
+{block name="title"}
+新闻详情
+{/block}
+
+{block name="content"}
+
+	<div class="h12"></div>
+	<!-- 主体内容 -->
+	<div class="news_con">
+		<div class="news_main">
+			<div class="news_right">
+				<menu>
+					<a href="" class="sel">热点信息</a>
+					<a href="">行业动态</a>
+					<a href="">上交会展讯</a>
+					<a href="">媒体报道</a>
+				</menu>
+			</div>			
+			<div class="news_left">
+				<p class="news_tit">{$data.title}</p>
+				<div class="news_span">
+					发布日期：{$data.created_time}  &nbsp;&nbsp;  来源：{$data.source}
+				</div>
+				<div class="news_edit">
+					<div class="edit">
+						{$data.content}
+					</div>
+				</div>
+			</div>	
+			<div class="clear"></div>
+		</div>
+	</div>
+	<div class="h140"></div>
+
+	{/block}
+
+</body>
+</html>

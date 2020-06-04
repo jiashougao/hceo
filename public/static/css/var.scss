@@ -1,0 +1,52 @@
+@charset "utf-8";
+
+$font01:"微软雅黑";
+
+$col01:#333;
+$col02:#fff;
+$col03:#035edd;
+$col04:#f60;
+$col05:#e6e6e6;
+$col06:#f2f6f7;
+
+$num01:14px;
+$num02:20px;
+
+$width01:1200px;
+
+@mixin _trs($ourtime01:0.3s){
+    transition:all $ourtime01 ease-in-out;
+    -webkit-transition:all $ourtime01 ease-in-out;
+}
+@mixin _cla($ps:2,$ht:40px){
+    display: -webkit-box;
+    overflow: hidden;
+    white-space: normal !important;
+    text-overflow: ellipsis;
+    word-wrap: break-word;
+    -webkit-line-clamp: $ps;
+    -webkit-box-orient: vertical;
+    height: $ht;      
+}
+@mixin _textover(){
+    overflow:hidden;
+    white-space:nowrap;
+    text-overflow:ellipsis;
+}
+@mixin _sca($sf:1.05){
+    transform: scale($sf);
+    -webkit-transform: scale($sf);
+    -moz-transform: scale($sf);
+    -ms-transform: scale($sf);
+    -o-transform: scale($sf);
+}
+@mixin _inblock(){
+    display:inline-block;
+    *display:inline;
+    *zoom:1;
+}
+
+
+
+
+

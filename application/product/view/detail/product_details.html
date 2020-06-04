@@ -1,0 +1,168 @@
+{extend name="common@web/share/layout"}
+
+{block name="title"}
+	商品详情
+{/block}
+
+{block name="content"}
+
+<div class="h12"></div>
+<!-- 主体内容 -->
+<div class="prodea_main">
+		<div class="pro_main">
+			<!-- 左侧 -->
+			<div class="pro_left">
+				<div class="prodea_img">
+					<ul class="swiper-wrapper">
+
+						{volist name="product.albums" id="vo"}
+							<li class="swiper-slide">
+								<a>
+										<img src="{$vo.url}"/>
+								</a>
+
+							</li>
+						{/volist}
+
+					</ul>
+					<p class="prodea_tab prodea_prev"></p>
+					<p class="prodea_tab prodea_next"></p>
+				</div>			
+				<p class="protit">{$product.title}</p>
+				<div class="prodea_more"><a>产品简介</a></div>
+				<div class="prodea_edit">
+					{$product.detail|raw}
+				</div>			
+			</div> 
+			<!-- 右侧 -->
+			<div class="pro_right">
+				<p class="page_rtop">企业 / 机构信息</p>
+				<div class="prodea_rinfo">
+					<ul class="swiper-wrapper">
+						<li class="swiper-slide">
+							<a href="">
+								<div class="img"><img src="{$supplier.logo}"/></div>
+								<p class="textover p1">{$supplier.name}</p>
+								<p class="textover p2">展区：{$supplier.booth_area}</p>
+								<p class="textover p3">展位：{$supplier.booth_no}</p>
+							</a>
+						</li>
+
+					</ul>
+					<!--切换按钮-->
+					<div class="prodea_infotabcon">
+						<p class="proinfo_prev">上一个展品</p>
+						<p class="proinfo_next">下一个展品</p>						
+					</div>
+				</div>
+				<p class="page_rtop">推荐商品</p>
+				<ul class="rec_ul">
+					<li>
+						<a href="">
+							<div class="rec_img">
+								<img src="/static/html/images/index/vimg.jpg"/>
+							</div>
+							<div class="rec_rcon">
+								<p class="textover p1">展商名称</p>
+								<p class="textover p2">展厅类 - 节能环保</p>
+							</div>
+						</a>
+					</li>
+					<li>
+						<a href="">
+							<div class="rec_img">
+								<img src="/static/html/images/index/vimg.jpg"/>
+							</div>
+							<div class="rec_rcon">
+								<p class="textover p1">展商名称</p>
+								<p class="textover p2">展厅类 - 节能环保</p>
+							</div>
+						</a>
+					</li>
+					<li>
+						<a href="">
+							<div class="rec_img">
+								<img src="/static/html/images/index/vimg.jpg"/>
+							</div>
+							<div class="rec_rcon">
+								<p class="textover p1">展商名称</p>
+								<p class="textover p2">展厅类 - 节能环保</p>
+							</div>
+						</a>
+					</li>
+					<li>
+						<a href="">
+							<div class="rec_img">
+								<img src="/static/html/images/index/vimg.jpg"/>
+							</div>
+							<div class="rec_rcon">
+								<p class="textover p1">展商名称</p>
+								<p class="textover p2">展厅类 - 节能环保</p>
+							</div>
+						</a>
+					</li>
+					<li>
+						<a href="">
+							<div class="rec_img">
+								<img src="/static/html/images/index/vimg.jpg"/>
+							</div>
+							<div class="rec_rcon">
+								<p class="textover p1">展商名称</p>
+								<p class="textover p2">展厅类 - 节能环保</p>
+							</div>
+						</a>
+					</li>
+					<li>
+						<a href="">
+							<div class="rec_img">
+								<img src="/static/html/images/index/vimg.jpg"/>
+							</div>
+							<div class="rec_rcon">
+								<p class="textover p1">展商名称</p>
+								<p class="textover p2">展厅类 - 节能环保</p>
+							</div>
+						</a>
+					</li>
+					<li>
+						<a href="">
+							<div class="rec_img">
+								<img src="/static/html/images/index/vimg.jpg"/>
+							</div>
+							<div class="rec_rcon">
+								<p class="textover p1">展商名称</p>
+								<p class="textover p2">展厅类 - 节能环保</p>
+							</div>
+						</a>
+					</li>				
+					<li>
+						<a href="">
+							<div class="rec_img">
+								<img src="/static/html/images/index/vimg.jpg"/>
+							</div>
+							<div class="rec_rcon">
+								<p class="textover p1">展商名称</p>
+								<p class="textover p2">展厅类 - 节能环保</p>
+							</div>
+						</a>
+					</li>				
+				</ul>
+			</div>
+			<div class="clear"></div>
+		</div>							
+	</div>
+<div class="h140"></div>
+
+{/block}
+
+</body>
+</html>
+{block name="script"}
+<script>
+
+    function proinfo_next(val) {
+        $(".changemenu a").removeClass('sel');
+        $("."+val).addClass("sel");
+    }
+
+</script>
+{/block}

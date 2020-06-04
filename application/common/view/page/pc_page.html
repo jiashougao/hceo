@@ -1,0 +1,197 @@
+
+<style>
+    .page_num {
+        margin-top: 30px;
+        text-align: center;
+        color: #b1b1b1;
+        font-size: 18px; }
+    .page_num .num_b {
+        margin: 0 16px; }
+    .page_num input {
+        width: 80px;
+        color: #b1b1b1;
+        font-size: 18px;
+        border-radius: 20px;
+        -webkit-border-radius: 20px;
+        outline: none;
+        border: 1px solid #b4b4b4;
+        height: 38px;
+        padding: 0 16px;
+        box-sizing: border-box;
+        text-align: center; }
+
+    .page_num a, .page_num span {
+        display: inline-block;
+        border-radius: 20px;
+        -webkit-border-radius: 20px;
+        padding: 8px 14px;
+        color: #b1b1b1;
+        border: 1px solid #b4b4b4;
+        transition: all 0.3s ease-in-out;
+        -webkit-transition: all 0.3s ease-in-out;
+        font-size: 18px;
+        margin: 0 4px; }
+
+    .page_num span {
+        border: none; }
+
+    .page_num a:hover {
+        border: 1px solid #001e5a;
+    }
+    .page_num .sel {
+        border: 1px solid #001e5a;
+        background: #001e5a;
+        color: #fff; }
+    .page_num b {
+        font-weight: normal;
+        letter-spacing: 2px; }
+
+    .page_num .disabled {
+        background: #b4b4b4;
+        cursor: not-allowed;
+        color: #fff; }
+
+    .page_num .disabled:hover {
+        background: #b4b4b4;
+        cursor: not-allowed;
+        color: #fff;
+        border: 1px solid #b4b4b4; }
+</style>
+    <div class="loading_con" style="position: fixed;z-index: 999;width: 100%;height: 100%;display: block;left: 0;top: 0;display: none;">
+        <div style="position: absolute;width: 100%;height: 100%;z-index: 10;left: 0;top: 0;background: rgba(0,0,0,0.3);"></div>
+        <div class="loading" style="position: absolute;left: 0;top: 50%;z-index: 20;width: 100%;margin-top: -20px;">
+            <p style="background-image: url(https://img.messecloud.com/gif/2020/05/08/7be0c6a68855f9aca94804de426a52e8.gif) !important
+      ;background-repeat: no-repeat !important; background-position: center !important; width: 100%;height: 40px;text-align: center;margin: 0;">
+            </p >
+            <p style="font-size: 16px;color: #333;text-align: center;margin-top: 8px;color: #fff;">loading</p >
+        </div>
+    </div>
+    <div class="page_num"  data-url="{$url}">
+<!--    {if condition="$paging['start_page_index'] > 1 "}-->
+<!--        <a  onclick="page({$paging.page_index-1},{$paging.total_count},{$paging.page_size})">上页</a>-->
+<!--        <a  onclick="page({$paging.page_index-1},{$paging.total_count},{$paging.page_size})">1</a>-->
+<!--    {/if}-->
+<!--    {if condition="$paging['start_page_index']>2"}-->
+<!--        <span>...</span>-->
+<!--    {/if}-->
+<!--    {for start="$paging['start_page_index']" end="$paging['end_page_index']" comparison="elt" step="1" name="i" }-->
+<!--        {if condition="$i == $paging['page_index']"}-->
+<!--            <a  class="sel">{$i}</a>-->
+<!--        {else}-->
+<!--            <a  onclick="page({$i},{$paging.total_count},{$paging.page_size})">{$i}</a>-->
+<!--        {/if}-->
+<!--    {/for}-->
+<!--    {if condition="$paging.end_page_index < $paging.page_count"}-->
+<!--        {if condition="$paging.page_index < $paging.end_page_index"}-->
+<!--            <span>...</span>-->
+<!--        {/if}-->
+<!--        <a onclick="page({$paging.page_count},{$paging.total_count},{$paging.page_size})">{$paging.page_count}</a>-->
+<!--        <a onclick="page({$paging.page_index+1},{$paging.total_count},{$paging.page_size})">下页</a>-->
+<!--    {/if}-->
+<!--    <b class="num_b">跳转至</b>-->
+<!--    <input type="tel"  value="1" />-->
+<!--    <b>页</b>-->
+<!--    <b>共{$paging.page_count}页</b>-->
+</div>
+<script>
+
+    window.viewResult={
+        pageError:function(){
+            $('.loading_con').hide();
+           alert("<?php echo __('加载失败');?>")
+        },
+        pageSuccess:function(count,page){
+            $('.loading_con').hide();
+            var paging = get_paging(count,page);
+            $(".page_num").html(li(paging, function (page) {
+                return "window.view.search(" + page +")";
+            }));
+        },
+    };
+
+    function li(model,urlCallback){
+        let content = "";
+        //获取当前分类id
+        // console.log(cid);
+        if (model == null) {
+            return content;
+        }
+
+        if(model.page_count>0){
+            if (model.start_page_index > 1){
+                content += '<a  href="javascript:void(0);" onclick="'+urlCallback(model.page_index-1)+'"><?php echo __("上页");?></a>'+
+                    '<a  href="javascript:void(0);" onclick="' + urlCallback(1)+'">1</a>';
+
+            }
+
+            if(model.start_page_index > 2 ){
+                content += '<span>...</span>';
+            }
+
+
+
+            for (let i = model.start_page_index; i <= model.end_page_index; i++){
+                if(i==model.page_index){
+                    content += '<a class="sel">'+i+'</a>';
+                }else{
+                    content +='<a href="javascript:void(0);" onclick="' + urlCallback(i)+'">'+i+'</a>';
+                }
+            }
+
+            let lastpage = model.page_index+1;
+
+            if(model.end_page_index < model.page_count){
+                if(model.page_index < model.end_page_index){
+                    content +='<span>...</span>';
+                }
+                content += '<a href="javascript:void(0);" onclick="' + urlCallback(model.page_count)+'">'+model.page_count+'</a>'+
+                    '<a href="javascript:void(0);" onclick="' + urlCallback(lastpage)+'">下页</a>';
+            }
+            content +='<b class="num_b">跳转至</b>';
+            content +='<input type="tel"  class="page_num_search"  onblur="page_num_search_oninput_onblur()" oninput="page_num_search_oninput('+model.page_count+')" value="'+model.page_index+'" />';
+            content +='<b>页/</b>';
+            content +='<b>共'+model.page_count+'页</b>';
+        }
+        return content;
+
+    }
+
+    var paging = <?php echo json_encode($paging)?>;
+
+    $(".page_num").html(li(paging,function (page) {
+        return "window.view.search("+ page +")";
+    }));
+
+    function page_num_search_oninput_onblur() {
+        var page_num = $(".page_num_search").val();
+        window.view.search(page_num);
+        $(".page_num_search").val(page_num);
+        console.log(page_num);
+    }
+
+    function page_num_search_oninput(page_count) {
+        var value = $(".page_num_search").val();
+        if(value> page_count)  value= page_count;
+        if(value<1) value=1;
+        $(".page_num_search").val(value);
+    }
+
+    function get_paging(total_count,index) {
+        var paging = [];
+        var url_count = 5;
+        var pageSize = 1;
+        var page_count = Math.ceil(total_count/(pageSize*1.0));
+        paging.page_index = index;
+        paging.start_page_index = (index - url_count) > 0 ? (index - url_count) : 1;
+        paging.end_page_index = (index + url_count) <= page_count ? (index + url_count) : page_count;
+        paging.from_index = page_count==0?0:((index - 1) * pageSize + 1);
+        paging.to_index = (index >= page_count||page_count==0) ? total_count : (index * pageSize);
+        paging.is_last_page = index >= page_count || page_count == 0;
+        paging.is_first_page = index == 1 || page_count == 0;
+        paging.page_count = page_count;
+        paging.page_size = pageSize;
+        paging.total_count = total_count;
+        paging.url_count = url_count;
+        return paging;
+    }
+</script>

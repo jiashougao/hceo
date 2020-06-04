@@ -1,0 +1,144 @@
+{extend name="common@web/share/layout"}
+
+{block name="title"}
+商户详情
+{/block}
+
+{block name="content"}
+<div class="h12"></div>
+<!-- 主体内容 -->
+<div class="prodea_main">
+	<div class="pro_main">
+		<!-- 左侧 -->
+		<div class="pro_left">
+			<p class="protit">{$supplier.name}</p>
+			<div class="prodea_more"><a>企业详情</a></div>
+			<div class="prodea_edit">
+				这里是文字内容这里是文字内容这里是文字内容这里是文字内容这里是文字内容这里是文字内容这里是文字内容
+				这里是文字内容这里是文字内容这里是文字内容这里是文字内容这里是文字内容这里是文字内容这里是文字内容
+				这里是文字内容这里是文字内容这里是文字内容这里是文字内容这里是文字内容这里是文字内容这里是文字内容
+				这里是文字内容这里是文字内容这里是文字内容这里是文字内容这里是文字内容这里是文字内容这里是文字内容
+			</div>
+			<div class="prodea_menu">
+				<div class="prodea_more"><a>参展商品</a></div>
+				<div class="vl_menu"><a href=""></a></div>
+				<div class="vl_block"><a class="sel" href=""></a></div>
+			</div>
+			<div class="prodea_ul">
+				<ul>
+					{foreach name="products" item="product" key="productKey"}
+					<li>
+						<a href="">
+							<div class="img">
+								<img src="{:esc_img_url($product.poster)}"/>
+							</div>
+							<p class="textover">{$product.title}</p>
+						</a>
+					</li>
+					{/foreach}
+				</ul>
+			</div>
+			<!-- PC页码 -->
+			{$page_html|raw}
+			<input type="hidden" id="id" value='{$id}'>
+<!--			<div class="page_more"><a href="">加载更多</a></div>-->
+		</div>
+		<!-- 右侧 -->
+		<div class="pro_right">
+			<p class="page_rtop">企业新闻</p>
+			<ul class="prodea_rul">
+				<li>
+					<a href="">
+						<p class="textover">企业新闻标题</p>
+						<p class="data">0000 00-00 00：00</p>
+					</a>
+				</li>
+				<li>
+					<a href="">
+						<p class="textover">企业新闻标题</p>
+						<p class="data">0000 00-00 00：00</p>
+					</a>
+				</li>
+				<li>
+					<a href="">
+						<p class="textover">企业新闻标题</p>
+						<p class="data">0000 00-00 00：00</p>
+					</a>
+				</li>
+				<li>
+					<a href="">
+						<p class="textover">企业新闻标题</p>
+						<p class="data">0000 00-00 00：00</p>
+					</a>
+				</li>
+				<li>
+					<a href="">
+						<p class="textover">企业新闻标题</p>
+						<p class="data">0000 00-00 00：00</p>
+					</a>
+				</li>
+			</ul>
+			<div class="prodea_more">
+				<a href="" >查看更多</a>
+			</div>
+		</div>
+		<div class="clear"></div>
+	</div>
+</div>
+<div class="h140"></div>
+{/block}
+{block name="script"}
+<script>
+
+	//pc分页
+	window.view={
+		search:function(index){
+			$('.loading_con').show();
+			$.ajax({
+				url:$(".page_num").data('url'),
+				type:"get",
+				dataType:'json',
+				data:{
+					'type':'supplier_detail',
+					'page':index,
+					'page_size':1,
+					'fetch_count':'yes',
+					'supplier':$('#id').val()
+				},
+				success:function(res){
+					//重新渲染分页
+					if(res.errcode == 0){
+						let html ="";
+						if(res.data.items.length > 0) {
+							for(let i=0;i<res.data.items.length;i++) {
+								let poster = JSON.parse(res.data.items[i].poster);
+								let postUrl = poster[0].url;
+								console.log(poster);
+								html += "<li>" +
+										"<a href=''>" +
+										"<div class='img'>" +
+										"<img src='" + postUrl + "'/>" +
+										"</div>" +
+										"<p class='textover'>"+res.data.items[i].title+"</p>" +
+										"</a>" +
+										"</li>";
+							}
+						}
+						$('.prodea_ul ul').html(html);
+						window.viewResult.pageSuccess(res.data.count,index);
+					}
+				},
+				error:function(){
+					window.viewResult.pageError(res.data.count,index);
+				}
+			});
+		},
+	};
+
+
+
+
+
+
+</script>
+{/block}

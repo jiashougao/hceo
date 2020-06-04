@@ -1,0 +1,82 @@
+@charset "utf-8";
+/* CSS Document */
+* {padding: 0;margin: 0;}
+body {margin: 0px;padding: 0px;color: #666;font-family:"微软雅黑", Arial, Helvetica, sans-serif;
+font-size:14px;background:#fff;
+text-align:left;position:relative;line-height:20px;min-width:1400px;}
+img {border: 0;position:relative;}
+.clear {height:0px;line-height:0px;font-size:0px;clear:both;visibility:hidden;overflow:hidden;padding:0;margin:0;}
+div,ul,dl,dd,dt,li,p,span,h1,h2,h3,h4,h5,h6 { margin:0px;padding:0px;list-style:none;list-style-type: none; word-wrap:break-word;position:relative; border:none;font-weight:400;}
+a {color:#666;text-decoration:none;position:relative;cursor:pointer;}
+header, footer, nav, section, article, menu, aside {display:block;position:relative;} 
+textarea { resize:none;font-family:"微软雅黑";font-size:14px;}
+table { border-collapse:collapse;border-spacing:0;}
+th , td { text-align:left;}
+input {font-family:"微软雅黑";font-size:14px;}
+input:focus {outline:none;}
+input.sub {cursor:pointer; background:none; border:none;}
+input.text {background:none; border:none;}
+
+@keyframes _arrow {
+    0% {
+      transform: translate(0px, 0px);
+      -webkit-transform: translate(0px, 0px); }
+    50% {
+      transform: translate(-10px, 0px);
+      -webkit-transform: translate(-10px, 0px); }
+    100% {
+      transform: translate(0px, 0px);
+      -webkit-transform: translate(0px, 0px); } 
+}
+
+@media screen and (max-width: 750px) {
+    html {font-size: 62.5%;/*10 ÷ 16 × 100% = 62.5%*/}
+body {   
+	margin:0;padding:0;color: #333;
+	min-width: 100%;
+	font-family:"微软雅黑", Arial, Helvetica, sans-serif;background:#fff;text-align:left;position:relative; line-height:0.35rem;font-size:0.24rem;}
+}
+
+
+
+.textover { overflow:hidden;white-space:nowrap;display:block;text-overflow:ellipsis;}
+
+/*placeholder颜色*/
+::-webkit-input-placeholder { /* WebKit browsers */
+    color: #a7a7a7;
+}
+:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+    color: #a7a7a7;
+}
+::-moz-placeholder { /* Mozilla Firefox 19+ */
+    color: #a7a7a7;
+}
+:-ms-input-placeholder { /* Internet Explorer 10+ */
+    color: #a7a7a7;
+}
+
+a,button,input,select{
+	-webkit-appearance: none; 
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+    -webkit-tap-highlight-color: transparent; /* For some Androids */
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,76 @@
+{extend name="common@web/share/layout"}
+
+{block name="title"}
+新闻详情
+{/block}
+
+{block name="content"}
+<style>
+	.changemenu a{
+		cursor: pointer;
+	}
+</style>
+	<div class="h12"></div>
+	<!-- 主体内容 -->
+	<div class="news_con">
+		<div class="news_main">
+			<div class="news_right">
+				<menu class="changemenu">
+					<a  onclick="change('hot')"      class="hot sel">热点信息</a>
+					<a  onclick="change('industry')" class="industry">行业动态</a>
+					<a  onclick="change('zx')"       class="zx">上交会展讯</a>
+					<a  onclick="change('media')"    class="media">媒体报道</a>
+				</menu>
+			</div>			
+			<div class="newslist_left">
+				<ul class="newslist_ul">
+
+					{volist name="list" id="vo"}
+						<li>
+							<a href="/news/detail/detail?id={$vo.id}&supplier_id={$vo.supplier_id}">
+								<p class="textover">{$vo.title}</p>
+								<p class="data">{$vo.created_time}</p>
+							</a>
+						</li>
+					{/volist}
+
+				</ul>
+				<!-- PC页码 -->
+				<div class="page_num">
+					<a href="" class="disabled">首页</a>
+					<a href="" class="sel">1</a>
+					<a href="">2</a>
+					<span>...</span>
+					<a href="">6</a>
+					<a href="">尾页</a>
+					<b class="num_b">跳转至</b>
+					<input type="tel"  value="1" />
+					<b>页</b>
+					<b>共8页</b>	
+				</div>
+				<!--PH加载更多-->
+				<div class="page_more"><a href="">加载更多</a></div>						
+			</div>	
+			<div class="clear"></div>
+		</div>
+	</div>
+	<!--<div class="h140"></div>-->
+	<!--撑页面高度-->
+	<div class="hbot"></div>
+{/block}
+
+</body>
+</html>
+{block name="script"}
+<script>
+
+	function change(val) {
+		$(".changemenu a").removeClass('sel');
+        $("."+val).addClass("sel");
+    }
+
+
+
+</script>
+{/block}
+
