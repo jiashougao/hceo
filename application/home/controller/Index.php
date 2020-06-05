@@ -14,7 +14,6 @@ use think\Controller;
 class Index extends Controller
 {
     public function index(){
-
-        exit('test');
+        echo 'test';
     }
 }
