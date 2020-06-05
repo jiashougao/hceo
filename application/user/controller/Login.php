@@ -11,7 +11,7 @@ use think\Controller;
 
 class Login extends Controller
 {
-        public function index(){
-            echo 'fdsfds';
+        public function index(Request $request){
+
         }
 }

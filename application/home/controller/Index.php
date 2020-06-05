@@ -15,6 +15,6 @@ class Index extends Controller
 {
     public function index(){
 
-        echo 'test';exit;
+        return view('index');
     }
 }
