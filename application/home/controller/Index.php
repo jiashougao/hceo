@@ -16,9 +16,6 @@ class Index extends Controller
     public function index(){
 
 
-        echo 'test';exit;
-        /*$news = http_get('web/article/article_index');
-        $this->assign('news', $news);
-        return $this->fetch();*/
+        echo 'fdsfsd';
     }
 }
