@@ -19,6 +19,8 @@ class Lists extends Controller
      */
     public function lists(){
 
+
+        exit('fdfd');
         $parameter = [];
         $url = '/web/article/article_list';
         $data = http_post($url,$parameter);
