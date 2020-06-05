@@ -7,13 +7,11 @@
  */
 
 namespace app\user\controller;
+use think\Controller;
 
-
-class Login
+class Login extends Controller
 {
         public function index(){
-
-
             echo 'fdsfds';
         }
 }
