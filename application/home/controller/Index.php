@@ -15,6 +15,6 @@ class Index extends Controller
 {
     public function index(){
 
-        echo 'fdsfsadfdasfsda';exit;
+        echo 'test';exit;
     }
 }
