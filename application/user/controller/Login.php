@@ -11,5 +11,9 @@ namespace app\user\controller;
 
 class Login
 {
+        public function index(){
 
+
+            echo 'fdsfds';
+        }
 }
