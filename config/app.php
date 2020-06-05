@@ -17,7 +17,7 @@ use think\facade\Env;
 
 return [
     // api host
-    'api_host'           => 'http://cloud2.zqxdl.cn',
+    'api_host'           => 'http://hceo-ui.zqxdl.cn/',
 
     // 应用名称
     'app_name'               => '',
